@@ -1,39 +1,46 @@
+/* ============================================================
+   REYNALD D. NOGALIZA — SERVICE WORKER
+   PWA Caching Strategy
+   ============================================================ */
+
 const CACHE_NAME = 'rn-portfolio-v1';
 const ASSETS = [
-  './',
-  './index.html',
-  './style.css',
-  './script.js',
-  './manifest.json',
-  './icon-192.png',
-  './icon-512.png',
-  './photofinal.jpg'
+  '/portfolio_web/',
+  '/portfolio_web/index.html',
+  '/portfolio_web/style.css',
+  '/portfolio_web/script.js',
+  '/portfolio_web/manifest.json',
+  '/portfolio_web/icon-512.png',
+  '/portfolio_web/photofinal.jpg'
 ];
 
-self.addEventListener('install', event => {
+// Install — cache all assets
+self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(cache => cache.addAll(ASSETS))
+    caches.open(CACHE_NAME).then((cache) => {
+      return cache.addAll(ASSETS);
+    })
   );
   self.skipWaiting();
 });
 
-self.addEventListener('activate', event => {
+// Activate — clean old caches
+self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys().then(keys =>
-      Promise.all(
-        keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k))
-      )
-    )
+    caches.keys().then((keys) => {
+      return Promise.all(
+        keys.filter(key => key !== CACHE_NAME).map(key => caches.delete(key))
+      );
+    })
   );
   self.clients.claim();
 });
 
-self.addEventListener('fetch', event => {
+// Fetch — serve from cache, fallback to network
+self.addEventListener('fetch', (event) => {
   event.respondWith(
-    caches.match(event.request).then(cached => {
-      return cached || fetch(event.request).catch(() =>
-        caches.match('./index.html')
-      );
+    caches.match(event.request).then((cached) => {
+      return cached || fetch(event.request);
     })
   );
 });
