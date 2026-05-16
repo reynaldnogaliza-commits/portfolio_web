@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reynald D. Nogaliza — IT Intern & Front-End Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- PWA -->
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#38bdf8" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="RN Portfolio" />
+<link rel="apple-touch-icon" href="icon-192.png" />
+</head>
+<body>
+
+  <!-- LOADING SCREEN -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-logo">RN</div>
+      <div class="loader-bar"><div class="loader-progress"></div></div>
+      <div class="loader-text">Initializing Portfolio...</div>
+    </div>
+  </div>
+
+  <!-- SCROLL PROGRESS -->
+  <div id="scroll-progress"><div id="scroll-bar"></div></div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">RN<span class="dot">.</span></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#certifications" class="nav-link">Certifications</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="hero">
+    <canvas id="particle-canvas"></canvas>
+    <div class="hero-glow glow-1"></div>
+    <div class="hero-glow glow-2"></div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-badge reveal-up">Available for Opportunities</div>
+        <h1 class="hero-name reveal-up delay-1">
+          Reynald D.<br /><span class="accent-text">Nogaliza</span>
+        </h1>
+        <p class="hero-tagline reveal-up delay-2">
+          <span id="typed-text"></span><span class="cursor">|</span>
+        </p>
+        <p class="hero-intro reveal-up delay-3">
+          A motivated IT student from Surigao City, passionate about front-end development,
+          technical support, and building digital experiences that solve real problems.
+        </p>
+        <div class="hero-cta reveal-up delay-4">
+          <a href="#" class="btn btn-primary" download>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download Resume
+          </a>
+          <a href="#contact" class="btn btn-outline">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Contact Me
+          </a>
+        </div>
+        <div class="hero-socials reveal-up delay-5">
+          <a href="#" class="social-icon" title="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+          <a href="mailto:reynald@gmail.com" class="social-icon" title="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+          <a href="tel:+639100086572" class="social-icon" title="Phone">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.08 6.08l1.48-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="hero-image-wrap reveal-right delay-2">
+        <div class="hero-image-container">
+          <div class="hero-image-ring ring-1"></div>
+          <div class="hero-image-ring ring-2"></div>
+          <div class="hero-image-ring ring-3"></div>
+          <div class="hero-avatar">
+            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="100" cy="80" r="40" fill="#334155"/>
+              <ellipse cx="100" cy="170" rx="60" ry="40" fill="#334155"/>
+              <circle cx="100" cy="80" r="38" fill="#475569"/>
+              <circle cx="100" cy="74" r="24" fill="#64748b"/>
+              <ellipse cx="100" cy="165" rx="55" ry="35" fill="#475569"/>
+            </svg>
+            <div class="avatar-label"> <div class="hero-avatar">
+    <img src="photofinal.jpg" alt="Reynald D. Nogaliza" class="img"/>
+</div></div>
+          </div>
+          <div class="hero-badge-float badge-f1">
+            <span class="badge-icon">💻</span>
+            <span>Front-End Dev</span>
+          </div>
+          <div class="hero-badge-float badge-f2">
+            <span class="badge-icon">🛠️</span>
+            <span>IT Support</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-dot"></div>
+      <span>Scroll Down</span>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-label">Who I Am</span>
+        <h2 class="section-title">About <span class="accent-text">Me</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal-left">
+          <p>I'm <strong>Reynald D. Nogaliza</strong>, a Bachelor of Science in Information Technology student based in <strong>Surigao City, Philippines</strong>. My journey in tech started with a deep curiosity for how things work — from electrical systems to code.</p>
+          <p>I thrive at the intersection of <strong>technical problem-solving</strong> and <strong>clean, functional design</strong>. Whether it's troubleshooting hardware, wiring a circuit, or crafting a responsive web interface, I approach every challenge with focus and dedication.</p>
+          <p>I'm actively seeking <strong>IT internships and front-end development opportunities</strong> where I can contribute, grow, and build something meaningful alongside great teams.</p>
+          <div class="about-info-grid">
+            <div class="info-item">
+              <span class="info-label">Location</span>
+              <span class="info-value">Surigao City, PH</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Degree</span>
+              <span class="info-value">BS Information Technology</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Email</span>
+              <span class="info-value">reynald@gmail.com</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label">Status</span>
+              <span class="info-value status-open">Open to Opportunities</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-stats reveal-right">
+          <div class="stat-card">
+            <div class="stat-number" data-target="1">0</div>
+            <div class="stat-label">Year of Experience</div>
+            <div class="stat-glow"></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="3">0</div>
+            <div class="stat-label">Projects Completed</div>
+            <div class="stat-glow"></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="10">0</div>
+            <div class="stat-label">Skills Mastered</div>
+            <div class="stat-glow"></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-target="1">0</div>
+            <div class="stat-label">Certification</div>
+            <div class="stat-glow"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION SECTION -->
+  <section id="education" class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-label">Academic Path</span>
+        <h2 class="section-title">My <span class="accent-text">Education</span></h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item reveal-left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-connector"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <span class="timeline-badge current">Current</span>
+                <h3 class="timeline-title">Bachelor of Science in Information Technology</h3>
+                <p class="timeline-institution">Northeastern Mindanao Colleges</p>
+              </div>
+              <div class="timeline-date">2025 – Present</div>
+            </div>
+            <p class="timeline-desc">Pursuing a comprehensive IT degree with focus on software development, networking, and technical systems. Building expertise in web technologies, computer systems, and modern IT practices.</p>
+            <div class="timeline-tags">
+              <span class="tag">Web Development</span>
+              <span class="tag">Networking</span>
+              <span class="tag">Computer Systems</span>
+              <span class="tag">IT Infrastructure</span>
+            </div>
+          </div>
+        </div>
+        <div class="timeline-item reveal-right">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <div>
+                <span class="timeline-badge completed">Completed</span>
+                <h3 class="timeline-title">Senior High School — EIM Track</h3>
+                <p class="timeline-institution">Surigao del Norte National High School</p>
+              </div>
+              <div class="timeline-date">2024 – 2025</div>
+            </div>
+            <p class="timeline-desc">Graduated from the Electrical Installation and Maintenance strand, gaining hands-on expertise in electrical systems, schematic plans, safety protocols, and technical installation processes.</p>
+            <div class="timeline-tags">
+              <span class="tag">Electrical Systems</span>
+              <span class="tag">Schematic Reading</span>
+              <span class="tag">Basic Wiring</span>
+              <span class="tag">Technical Support</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE SECTION -->
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-label">Work History</span>
+        <h2 class="section-title">My <span class="accent-text">Experience</span></h2>
+      </div>
+      <div class="experience-card reveal-up">
+        <div class="exp-header">
+          <div class="exp-logo">
+            <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="20" fill="#0ea5e9" opacity="0.15"/><path d="M10 20 L20 10 L30 20 L25 20 L25 30 L15 30 L15 20 Z" fill="#38bdf8"/></svg>
+          </div>
+          <div class="exp-meta">
+            <h3 class="exp-title">Work Immersion — Electrical & Office Support</h3>
+            <p class="exp-company">Surigao del Norte Electric Cooperative, Inc. (SURNECO)</p>
+            <div class="exp-details">
+              <span class="exp-date">📅 April 2025</span>
+              <span class="exp-type">Full-time Immersion</span>
+              <span class="exp-location">📍 Surigao City, PH</span>
+            </div>
+          </div>
+        </div>
+        <div class="exp-body">
+          <p class="exp-summary">Participated in a comprehensive work immersion program at SURNECO, gaining practical experience in both electrical field operations and administrative office support.</p>
+          <ul class="exp-list">
+            <li>
+              <span class="exp-bullet"></span>
+              Assisted linemen in performing basic electrical tasks and field operations, including equipment handling and site preparation
+            </li>
+            <li>
+              <span class="exp-bullet"></span>
+              Organized and managed tools and materials during field operations to ensure smooth and efficient workflow
+            </li>
+            <li>
+              <span class="exp-bullet"></span>
+              Supported administrative office functions including document filing, record-keeping, and data encoding
+            </li>
+            <li>
+              <span class="exp-bullet"></span>
+              Systematically organized tools and materials for maximum operational efficiency
+            </li>
+            <li>
+              <span class="exp-bullet"></span>
+              Collaborated effectively with team members and contributed to completing assigned tasks on schedule
+            </li>
+          </ul>
+          <div class="exp-skills">
+            <span class="exp-skill-tag">Electrical Operations</span>
+            <span class="exp-skill-tag">Data Encoding</span>
+            <span class="exp-skill-tag">Document Management</span>
+            <span class="exp-skill-tag">Team Collaboration</span>
+            <span class="exp-skill-tag">Field Operations</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS SECTION -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-label">What I Know</span>
+        <h2 class="section-title">My <span class="accent-text">Skills</span></h2>
+      </div>
+      <div class="skills-grid">
+
+        <div class="skill-category reveal-up delay-1">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3>Programming & Web</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-info"><span class="skill-name">HTML5</span><span class="skill-pct">82%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span class="skill-name">CSS3</span><span class="skill-pct">76%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="76"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span class="skill-name">Front-End Development</span><span class="skill-pct">68%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="68"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span class="skill-name">Visual Studio Code</span><span class="skill-pct">85%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category reveal-up delay-2">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h3>Software</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-info"><span class="skill-name">Microsoft Word</span><span class="skill-pct">90%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span class="skill-name">PowerPoint</span><span class="skill-pct">85%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category reveal-up delay-3">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </div>
+            <h3>Technical Skills</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-info"><span class="skill-name">Computer Troubleshooting</span><span class="skill-pct">78%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span class="skill-name">Hardware & Software Support</span><span class="skill-pct">72%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="72"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span class="skill-name">Electrical Schematic Reading</span><span class="skill-pct">70%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info"><span class="skill-name">Basic Electrical Wiring</span><span class="skill-pct">65%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="65"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-category reveal-up delay-4">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+            </div>
+            <h3>Multimedia</h3>
+          </div>
+          <div class="skill-items">
+            <div class="skill-item">
+              <div class="skill-info"><span class="skill-name">Basic Video Editing</span><span class="skill-pct">60%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="60"></div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-label">What I've Built</span>
+        <h2 class="section-title">My <span class="accent-text">Projects</span></h2>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card reveal-up delay-1">
+          <div class="project-header">
+            <div class="project-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+            </div>
+            <div class="project-links">
+              <a href="#" class="project-link" title="Live Preview">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              </a>
+              <a href="#" class="project-link" title="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-preview">
+            <div class="browser-bar">
+              <span></span><span></span><span></span>
+              <div class="browser-url">reynald-portfolio.dev</div>
+            </div>
+            <div class="project-mock">
+              <div class="mock-nav"></div>
+              <div class="mock-hero">
+                <div class="mock-title"></div>
+                <div class="mock-sub"></div>
+                <div class="mock-btn"></div>
+              </div>
+              <div class="mock-cards">
+                <div class="mock-card"></div>
+                <div class="mock-card"></div>
+                <div class="mock-card"></div>
+              </div>
+            </div>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Personal Portfolio Website</h3>
+            <p class="project-year">2025</p>
+            <p class="project-desc">A fully responsive personal portfolio website built from scratch using pure HTML and CSS. Designed the layout, visual identity, and user interface to effectively showcase personal profile, technical skills, and contact information.</p>
+            <div class="project-tech">
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">CSS3</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">Responsive Design</span>
+            </div>
+          </div>
+        </div>
+        <!-- Placeholder for future projects -->
+        <div class="project-card project-placeholder reveal-up delay-2">
+          <div class="placeholder-content">
+            <div class="placeholder-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </div>
+            <p>More projects coming soon...</p>
+            <span>Currently building something awesome</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS SECTION -->
+  <section id="certifications" class="section section-alt">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-label">Credentials</span>
+        <h2 class="section-title">My <span class="accent-text">Certifications</span></h2>
+      </div>
+      <div class="cert-grid">
+        <div class="cert-card reveal-up delay-1">
+          <div class="cert-ribbon">Certificate</div>
+          <div class="cert-seal">
+            <svg viewBox="0 0 60 60" fill="none">
+              <circle cx="30" cy="30" r="28" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4 2"/>
+              <circle cx="30" cy="30" r="22" fill="#0ea5e9" opacity="0.1"/>
+              <path d="M30 18 L33 26 L42 26 L35 32 L38 40 L30 35 L22 40 L25 32 L18 26 L27 26 Z" fill="#38bdf8"/>
+            </svg>
+          </div>
+          <div class="cert-body">
+            <span class="cert-type">On-the-Job Training</span>
+            <h3 class="cert-title">Technical Services Department</h3>
+            <p class="cert-issuer">Surigao del Norte Electric Cooperative, Inc. (SURNECO)</p>
+            <div class="cert-date-range">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              April 1, 2023 – April 12, 2024
+            </div>
+            <div class="cert-skills">
+              <span class="cert-skill">Electrical Operations</span>
+              <span class="cert-skill">Administrative Support</span>
+              <span class="cert-skill">Team Collaboration</span>
+            </div>
+          </div>
+          <div class="cert-glow"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-header reveal-up">
+        <span class="section-label">Get In Touch</span>
+        <h2 class="section-title">Contact <span class="accent-text">Me</span></h2>
+        <p class="section-subtitle">Have an opportunity or want to connect? I'd love to hear from you.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal-left">
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <span class="contact-label">Location</span>
+              <span class="contact-value">Surigao City, Philippines</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <span class="contact-label">Email</span>
+              <a href="mailto:reynald@gmail.com" class="contact-value contact-link">reynald@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.08 6.08l1.48-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <span class="contact-label">Phone</span>
+              <a href="tel:+639100086572" class="contact-value contact-link">+63 910 008 6572</a>
+            </div>
+          </div>
+          <div class="contact-socials">
+            <a href="#" class="contact-social">GitHub</a>
+            <a href="mailto:reynald@gmail.com" class="contact-social">Email</a>
+            <a href="tel:+639100086572" class="contact-social">Phone</a>
+          </div>
+        </div>
+        <div class="contact-form-wrap reveal-right">
+          <form class="contact-form" id="contact-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" placeholder="john@example.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Internship Opportunity" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Hi Reynald, I'd like to discuss..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-send">
+              <span class="btn-text">Send Message</span>
+              <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+            <div class="form-success" id="form-success">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              Message sent! I'll reply shortly.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="footer-glow"></div>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">RN<span class="dot">.</span></div>
+        <p class="footer-tagline">IT Intern | Front-End Developer | Technical Support Enthusiast</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social" title="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          </a>
+          <a href="mailto:reynald@gmail.com" class="footer-social" title="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
+        <div class="footer-nav">
+          <a href="#about">About</a>
+          <a href="#education">Education</a>
+          <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-divider"></div>
+        <p class="footer-copy">© 2025 · Designed & Developed by <strong>Reynald D. Nogaliza</strong></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
